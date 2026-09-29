@@ -28,13 +28,13 @@ tr:last-child td{border-bottom:none}
 <body>
 <main>
 <h1>SpendLess Privacy Policy</h1>
-<p class="meta">Effective: September 28, 2026 · <a href="ru/" hreflang="ru">Русский</a></p>
+<p class="meta">Effective: September 29, 2026</p>
 <h2>Who is responsible for the app</h2>
-<p>SpendLess is developed and published by Artsiom Melnik, Republic of Belarus. Questions about your data and requests: <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a>.</p>
+<p>SpendLess is published by Viachaslau Melnik, Republic of Armenia ("we" in this policy). Questions about your data and requests: <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a>.</p>
 <p>This policy covers the SpendLess mobile app for Android and iPhone.</p>
 <h2>In short</h2>
 <ul>
-<li>Your personal budget is stored only on your phone. The developer does not receive or see it.</li>
+<li>Your personal budget is stored only on your phone. We do not receive or see it.</li>
 <li>Shared budgets — the ones you keep together with other people — are synced through the SpendLess server. Their records are encrypted on the phone, and the server has no key: it cannot read amounts, categories or notes.</li>
 <li>You need an account only for shared budgets: sign-in with Google.</li>
 <li>The app has no ads and no analytics. If you allow it, crash reports go to Google (Firebase Crashlytics).</li>
@@ -46,6 +46,7 @@ tr:last-child td{border-bottom:none}
 <tbody>
 <tr><td>Your personal budget: income, expense and transfer records — amounts, dates, notes, accounts, categories, budgets, limits, exchange rates, settings</td><td>to keep track of your money — what the app is for</td><td>only on your phone</td><td>until you delete them in the app or uninstall the app</td></tr>
 <tr><td>PIN code and the setting for fingerprint or face unlock</td><td>to protect access to the app</td><td>in the phone's secure storage</td><td>until you turn protection off or uninstall the app</td></tr>
+<tr><td>Reset email — only if you enter it in Settings → Protection</td><td>to send you a link that resets a forgotten PIN</td><td>in the phone's secure storage; when you ask for a link — Firebase Authentication (Google, USA)</td><td>on the phone — until you remove it, turn protection off or uninstall the app; the app deletes the sign-in the link creates in Firebase right after checking it</td></tr>
 <tr><td>Your voice — only while the microphone button is on</td><td>to turn what you say into the text of a record</td><td>audio is not saved; the app receives only the recognized text</td><td>not stored</td></tr>
 <tr><td>The camera image — only on the screen for scanning a shared budget's QR code</td><td>to read the invitation code</td><td>processed on the phone; images are not saved or sent</td><td>not stored</td></tr>
 <tr><td>Account: the Google account's email address and account identifier</td><td>to sign in for shared budgets</td><td>Firebase Authentication (Google, USA); the SpendLess server keeps only the account identifier</td><td>until you delete the account</td></tr>
@@ -58,28 +59,29 @@ tr:last-child td{border-bottom:none}
 <p>The app never receives your fingerprint or face image: the phone's system does the check.</p>
 <p>The app is not included in the automatic Google or Apple backup. If you change phones or uninstall the app, your personal budget is lost — that is why the app has its own backup (below).</p>
 <h2>Backups and export</h2>
-<p>You create backups and table exports (CSV, Excel) yourself and decide where to keep them: in a folder on your phone, in your own cloud storage, or sent to yourself. The developer does not receive these files.</p>
-<p>A backup can be protected with a password — then it is encrypted. A backup without a password, a CSV file and an Excel file are plain text: keep them in a safe place.</p>
+<p>You create backups and table exports (CSV, Excel) yourself and decide where to keep them: in a folder on your phone, in your own cloud storage, or sent to yourself. We do not receive these files.</p>
+<p>A backup is always encrypted: without a password, with the app's own key, so the file does not open without SpendLess; with a password (or your app PIN as the password), with that password. The app's key is the same in every copy of the app, so a password protects a backup better. A CSV or Excel file is plain text: keep it in a safe place.</p>
 <h2>Who receives data</h2>
-<p>The developer does not sell your data or share it with anyone beyond the services below.</p>
+<p>We do not sell your data or share it with anyone beyond the services below.</p>
 <ul>
 <li><b>SpendLess server</b> — for shared budgets only. It runs in Google Cloud, region europe-west1 (Belgium). The key of a shared budget is created on the owner's phone and reaches members through a QR code; the server does not have it.</li>
 <li><b>Google sign-in</b> (Firebase Authentication, Google LLC, USA) — for shared budgets only, when you sign in. Google processes the email address, the account identifier, and the IP address of the sign-in; Google keeps IP addresses for a few weeks.</li>
-<li><b>Crash reports</b> (Firebase Crashlytics, Google) — only if you answered "Send" when the app asked, or turned it on later in Settings → Data.</li>
+<li><b>PIN reset by email</b> (Firebase Authentication, Google LLC, USA) — only if you set a reset email and ask for a link. Google receives the email address to send the letter and the IP address when the link is opened; the app deletes the sign-in the link creates right after checking it.</li>
+<li><b>Crash reports</b> (Firebase Crashlytics, Google) — only if you answered "Send" when the app asked, or turned them on later in Settings.</li>
 <li><b>Exchange rates.</b> To convert an amount to another currency, the app requests official rates from the National Bank of the Republic of Belarus (api.nbrb.by, Belarus) and the European Central Bank (ecb.europa.eu, Germany). The request contains none of your data — only a request for rates. Like any website, the banks see your IP address.</li>
 <li><b>Speech recognition.</b> Voice input starts only when you tap the microphone button and only with your permission. The app asks your phone's speech recognition service to work on the phone itself, offline. If your phone cannot do this for your language, the recording is processed on the servers of the phone's recognition service — Google on Android, Apple on iPhone — under their own rules.</li>
-<li><b>App store.</b> Installation, updates and purchases of SpendLess Pro are handled by Google Play or the App Store under their own rules. Payment details stay with the store; the developer does not see them. The app learns from the store only whether Pro is active.</li>
+<li><b>App store.</b> Installation, updates and purchases of SpendLess Pro are handled by Google Play or the App Store under their own rules. Payment details stay with the store; we do not see them. The app learns from the store only whether Pro is active.</li>
 </ul>
 <h2>Transfer of data to other countries</h2>
-<p>The SpendLess server is in Belgium (European Union). Google sign-in is processed in the USA, and crash reports are processed in Google data centers, including in the USA. Personal data protection requirements in the USA are lower than in the Republic of Belarus, and your rights there are protected differently.</p>
-<p>By signing in with Google you agree to your email address and account identifier being transferred to the USA. Crash reports are sent only after you answer "Send"; until then the app sends nothing. Your personal budget never leaves the phone.</p>
+<p>The SpendLess server is in Belgium (European Union). Google sign-in and the PIN reset letter are processed in the USA, and crash reports are processed in Google data centers, including in the USA. The USA has its own personal data protection rules, and your rights there are protected differently than in Armenia or the European Union.</p>
+<p>By signing in with Google you agree to your email address and account identifier being transferred to the USA; by asking for a PIN reset link — to your email address being transferred there. Crash reports are sent only after you answer "Send"; until then the app sends nothing. Your personal budget never leaves the phone.</p>
 <h2>How data is protected</h2>
 <ul>
 <li>Data on the phone is kept in the app's private storage, closed to other apps.</li>
 <li>Access to the app can be locked with a PIN code or fingerprint.</li>
 <li>Shared budget records are encrypted on the phone (AES-256-GCM) before they are sent; the server stores them encrypted and has no key.</li>
 <li>All connections to the server, sign-in, rates and crash reports use a secure connection (HTTPS).</li>
-<li>Backups can be encrypted with a password.</li>
+<li>Backups are always encrypted; a password makes them stronger.</li>
 </ul>
 <h2>Your rights and how to use them</h2>
 <ul>
@@ -88,16 +90,18 @@ tr:last-child td{border-bottom:none}
 <li><b>Delete records</b> — in the app; uninstalling the app deletes the personal budget.</li>
 <li><b>Delete the account</b> — Settings → Account → Delete account. Shared budgets you own are deleted for all members, from the others you leave; the account, your devices and Pro status are deleted from the server, and the Google sign-in is deleted from Firebase. Shared budgets are erased from your phone; the personal budget stays. Without the app — see the <a href="https://one1nfinityloop.github.io/spendless/delete-account/">account deletion page</a>.</li>
 <li><b>Sign out</b> — Settings → Account → Sign out. Shared budgets stay on the phone and stop syncing.</li>
-<li><b>Crash reports</b> — turn them off in Settings → Data.</li>
+<li><b>Crash reports</b> — turn them off in Settings.</li>
+<li><b>Reset email</b> — remove it in Settings → Protection.</li>
 </ul>
-<p>For questions about your data or requests about your rights (Law of the Republic of Belarus "On Personal Data Protection", Chapter 3), write to <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a>. A request for information about which of your data is processed is answered within five working days; other requests (withdraw consent, stop processing, delete) — within 15 days.</p>
+<p>For questions about your data or requests about your rights (Law of the Republic of Armenia "On Protection of Personal Data", Articles 15, 20 and 21), write to <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a>. A request for information about which of your data is processed is answered within five working days. Incomplete, inaccurate or unnecessary data is corrected or deleted within three working days. If you withdraw consent or ask to delete your account, processing stops and the data is deleted within ten working days; we confirm the deletion within three working days after it.</p>
+<p>If you believe your data is processed unlawfully, you can complain to the Personal Data Protection Agency of the Ministry of Justice of the Republic of Armenia or to a court.</p>
 <p>After an account is deleted, Google removes the sign-in data from its backup systems within 180 days. The server keeps only the account identifier that the account's earlier records in other people's budgets refer to; it contains no email address or name.</p>
 <h2>Children</h2>
-<p>SpendLess is not intended for children and does not collect data about children.</p>
+<p>SpendLess is not intended for children under 16 and does not collect data about children.</p>
 <h2>Changes</h2>
 <p>If this policy changes, the new version will appear on this page with a new effective date. Significant changes — new data, new services, transfer of data to other countries — will be announced in the app in advance, before they take effect.</p>
 <h2>Contact</h2>
-<p>Artsiom Melnik, <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a></p>
+<p>Viachaslau Melnik, <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a></p>
 </main>
 </body>
 </html>
