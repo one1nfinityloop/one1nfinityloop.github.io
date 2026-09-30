@@ -45,8 +45,7 @@ tr:last-child td{border-bottom:none}
 <thead><tr><th>Data</th><th>Why</th><th>Where it is stored</th><th>How long</th></tr></thead>
 <tbody>
 <tr><td>Your personal budget: income, expense and transfer records — amounts, dates, notes, accounts, categories, budgets, limits, exchange rates, settings</td><td>to keep track of your money — what the app is for</td><td>only on your phone</td><td>until you delete them in the app or uninstall the app</td></tr>
-<tr><td>PIN code and the setting for fingerprint or face unlock</td><td>to protect access to the app</td><td>in the phone's secure storage</td><td>until you turn protection off or uninstall the app</td></tr>
-<tr><td>Reset email — only when you ask for a link to reset a forgotten PIN: the email of the account you signed in with (Google, or Apple on iPhone; with Apple it may be the hidden relay address, and the letter then comes through Apple's forwarding)</td><td>to send you a link that resets a forgotten PIN</td><td>the app does not keep it: the letter goes out through Firebase Authentication (Google, USA)</td><td>the app deletes the sign-in the link creates in Firebase right after checking it</td></tr>
+<tr><td>App lock settings: whether the lock is on and when to lock again</td><td>to protect access to the app</td><td>in the phone's secure storage</td><td>until you turn the lock off or uninstall the app</td></tr>
 <tr><td>The camera image — only on the screen for scanning a shared budget's QR code</td><td>to read the invitation code</td><td>processed on the phone; images are not saved or sent</td><td>not stored</td></tr>
 <tr><td>Account: the email address and account identifier of your Google account, or of your Apple ID on iPhone (Apple may give the app a hidden relay address instead of your email, if you choose so)</td><td>to sign in for shared budgets</td><td>Firebase Authentication (Google, USA); the SpendLess server keeps only the account identifier</td><td>until you delete the account</td></tr>
 <tr><td>SpendLess Pro status — only if you sign in: the product you bought, the store's purchase token or transaction identifier, the expiry date, whether it was refunded, the start date of your free trial</td><td>so that shared budgets open for Pro on every member's phone</td><td>on the SpendLess server</td><td>until you delete the account</td></tr>
@@ -56,33 +55,32 @@ tr:last-child td{border-bottom:none}
 <tr><td>Crash report — only if you allowed it: phone model, system and app versions, the place in the code where the error happened, an installation identifier</td><td>to find and fix errors</td><td>Firebase Crashlytics (Google)</td><td>90 days</td></tr>
 </tbody></table></div>
 <p>A crash report contains no amounts, records, notes, email address or text of the error: only its type and the place in the code.</p>
-<p>The app never receives your fingerprint or face image: the phone's system does the check.</p>
+<p>The app lock uses the phone's own check — Face ID, Touch ID or fingerprint, and the phone's passcode if that fails. The phone's system does the check: the app never receives your fingerprint, your face image or your passcode, only whether the check passed.</p>
 <p>The app is not included in the automatic Google or Apple backup: on Android the system backup is turned off for the app, and on iPhone the app's database and its automatic backups are excluded from iCloud backup. If you change phones or uninstall the app, your personal budget is lost — that is why the app has its own backup (below).</p>
 <h2>Backups and export</h2>
 <p>You create backups and table exports (CSV, Excel) yourself and decide where to keep them: in a folder on your phone, in your own cloud storage, or sent to yourself. We do not receive these files.</p>
 <p>The automatic backup, if you turn it on, stays on the phone: on Android in the folder you choose, on iPhone in the app's own folder, which the Files app shows under On My iPhone → SpendLess. If you move a backup from there to a cloud storage, that service keeps it.</p>
-<p>A backup is always encrypted: without a password, with the app's own key, so the file does not open without SpendLess; with a password (or your app PIN as the password), with that password. The app's key is the same in every copy of the app, so a password protects a backup better. A CSV or Excel file is plain text: keep it in a safe place.</p>
+<p>A backup is always encrypted with the app's own key, so the file does not open without SpendLess. The app's key is the same in every copy of the app: keep backups where only you can reach them. A backup password set in an earlier version of the app keeps encrypting backups until you remove it, and a backup saved with a password opens with that password. A CSV or Excel file is plain text: keep it in a safe place.</p>
 <h2>Who receives data</h2>
 <p>We do not sell your data or share it with anyone beyond the services below.</p>
 <ul>
 <li><b>SpendLess server</b> — for shared budgets only. It runs in Google Cloud, region europe-west1 (Belgium). The key of a shared budget is created on the owner's phone and reaches members through a QR code; the server does not have it.</li>
 <li><b>Google sign-in</b> (Firebase Authentication, Google LLC, USA) — for shared budgets only, when you sign in. Google processes the email address, the account identifier, and the IP address of the sign-in; Google keeps IP addresses for a few weeks.</li>
 <li><b>Sign in with Apple</b> (Apple Inc., USA, through Firebase Authentication) — on iPhone, for shared budgets only, when you choose it. Apple gives the app your Apple ID's identifier and email address — or a hidden relay address, if you choose to hide your email. The app asks Apple for nothing else.</li>
-<li><b>PIN reset by email</b> (Firebase Authentication, Google LLC, USA) — only when you ask for a link to reset a forgotten PIN; the letter goes to the email of the account you signed in with. Google receives that address to send the letter and the IP address when the link is opened; the app deletes the sign-in the link creates right after checking it.</li>
 <li><b>Crash reports</b> (Firebase Crashlytics, Google) — only if you answered "Send" when the app asked, or turned them on later in Settings.</li>
 <li><b>Exchange rates.</b> To convert an amount to another currency, the app requests exchange rates from Frankfurter (api.frankfurter.dev, an open-source service that collects the rates of central banks; it runs on Cloudflare). If Frankfurter does not answer, the app asks the National Bank of the Republic of Belarus (api.nbrb.by, Belarus) and the European Central Bank (ecb.europa.eu, Germany); for a currency none of them publishes, the open currency-api data set (cdn.jsdelivr.net or currency-api.pages.dev). A request contains only currency codes and dates — none of your data. Like any website, these services see your IP address.</li>
 <li><b>App store.</b> Installation, updates and purchases of SpendLess Pro are handled by Google Play or the App Store under their own rules. Payment details stay with the store; we do not see them. If you sign in for shared budgets, the app sends the SpendLess server the store's proof of your purchase and the start date of your free trial; the server asks Google Play or Apple whether the purchase is valid and until when, and keeps only that.</li>
 </ul>
 <h2>Transfer of data to other countries</h2>
-<p>The SpendLess server is in Belgium (European Union). Google and Apple sign-in and the PIN reset letter are processed in the USA, and crash reports are processed in Google data centers, including in the USA. The USA has its own personal data protection rules, and your rights there are protected differently than in Armenia or the European Union.</p>
-<p>By signing in with Google or Apple you agree to your email address and account identifier being transferred to the USA; by asking for a PIN reset link — to your email address being transferred there. Crash reports are sent only after you answer "Send"; until then the app sends nothing. Your personal budget never leaves the phone.</p>
+<p>The SpendLess server is in Belgium (European Union). Google and Apple sign-in are processed in the USA, and crash reports are processed in Google data centers, including in the USA. The USA has its own personal data protection rules, and your rights there are protected differently than in Armenia or the European Union.</p>
+<p>By signing in with Google or Apple you agree to your email address and account identifier being transferred to the USA. Crash reports are sent only after you answer "Send"; until then the app sends nothing. Your personal budget never leaves the phone.</p>
 <h2>How data is protected</h2>
 <ul>
 <li>Data on the phone is kept in the app's private storage, closed to other apps.</li>
-<li>Access to the app can be locked with a PIN code or fingerprint.</li>
+<li>Access to the app can be locked with the phone's own check: Face ID, Touch ID or fingerprint, falling back to the phone's passcode. While the lock is on, the app's screen is hidden in the list of recent apps.</li>
 <li>Shared budget records are encrypted on the phone (AES-256-GCM) before they are sent; the server stores them encrypted and has no key.</li>
 <li>All connections to the server, sign-in, rates and crash reports use a secure connection (HTTPS).</li>
-<li>Backups are always encrypted; a password makes them stronger.</li>
+<li>Backups are always encrypted.</li>
 </ul>
 <h2>Your rights and how to use them</h2>
 <ul>
