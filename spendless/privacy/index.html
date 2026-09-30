@@ -28,7 +28,7 @@ tr:last-child td{border-bottom:none}
 <body>
 <main>
 <h1>SpendLess Privacy Policy</h1>
-<p class="meta">Effective: September 29, 2026</p>
+<p class="meta">Effective: September 30, 2026</p>
 <h2>Who is responsible for the app</h2>
 <p>SpendLess is published by Viachaslau Melnik, Republic of Armenia ("we" in this policy). Questions about your data and requests: <a href="mailto:art.melnik.work@gmail.com">art.melnik.work@gmail.com</a>.</p>
 <p>This policy covers the SpendLess mobile app for Android and iPhone.</p>
@@ -47,7 +47,6 @@ tr:last-child td{border-bottom:none}
 <tr><td>Your personal budget: income, expense and transfer records — amounts, dates, notes, accounts, categories, budgets, limits, exchange rates, settings</td><td>to keep track of your money — what the app is for</td><td>only on your phone</td><td>until you delete them in the app or uninstall the app</td></tr>
 <tr><td>PIN code and the setting for fingerprint or face unlock</td><td>to protect access to the app</td><td>in the phone's secure storage</td><td>until you turn protection off or uninstall the app</td></tr>
 <tr><td>Reset email — only when you ask for a link to reset a forgotten PIN: the email of the account you signed in with (Google, or Apple on iPhone; with Apple it may be the hidden relay address, and the letter then comes through Apple's forwarding)</td><td>to send you a link that resets a forgotten PIN</td><td>the app does not keep it: the letter goes out through Firebase Authentication (Google, USA)</td><td>the app deletes the sign-in the link creates in Firebase right after checking it</td></tr>
-<tr><td>Your voice — only while the microphone button is on</td><td>to turn what you say into the text of a record</td><td>audio is not saved; the app receives only the recognized text</td><td>not stored</td></tr>
 <tr><td>The camera image — only on the screen for scanning a shared budget's QR code</td><td>to read the invitation code</td><td>processed on the phone; images are not saved or sent</td><td>not stored</td></tr>
 <tr><td>Account: the email address and account identifier of your Google account, or of your Apple ID on iPhone (Apple may give the app a hidden relay address instead of your email, if you choose so)</td><td>to sign in for shared budgets</td><td>Firebase Authentication (Google, USA); the SpendLess server keeps only the account identifier</td><td>until you delete the account</td></tr>
 <tr><td>SpendLess Pro status — only if you sign in: the product you bought, the store's purchase token or transaction identifier, the expiry date, whether it was refunded, the start date of your free trial</td><td>so that shared budgets open for Pro on every member's phone</td><td>on the SpendLess server</td><td>until you delete the account</td></tr>
@@ -58,9 +57,10 @@ tr:last-child td{border-bottom:none}
 </tbody></table></div>
 <p>A crash report contains no amounts, records, notes, email address or text of the error: only its type and the place in the code.</p>
 <p>The app never receives your fingerprint or face image: the phone's system does the check.</p>
-<p>The app is not included in the automatic Google or Apple backup. If you change phones or uninstall the app, your personal budget is lost — that is why the app has its own backup (below).</p>
+<p>The app is not included in the automatic Google or Apple backup: on Android the system backup is turned off for the app, and on iPhone the app's database and its automatic backups are excluded from iCloud backup. If you change phones or uninstall the app, your personal budget is lost — that is why the app has its own backup (below).</p>
 <h2>Backups and export</h2>
 <p>You create backups and table exports (CSV, Excel) yourself and decide where to keep them: in a folder on your phone, in your own cloud storage, or sent to yourself. We do not receive these files.</p>
+<p>The automatic backup, if you turn it on, stays on the phone: on Android in the folder you choose, on iPhone in the app's own folder, which the Files app shows under On My iPhone → SpendLess. If you move a backup from there to a cloud storage, that service keeps it.</p>
 <p>A backup is always encrypted: without a password, with the app's own key, so the file does not open without SpendLess; with a password (or your app PIN as the password), with that password. The app's key is the same in every copy of the app, so a password protects a backup better. A CSV or Excel file is plain text: keep it in a safe place.</p>
 <h2>Who receives data</h2>
 <p>We do not sell your data or share it with anyone beyond the services below.</p>
@@ -71,7 +71,6 @@ tr:last-child td{border-bottom:none}
 <li><b>PIN reset by email</b> (Firebase Authentication, Google LLC, USA) — only when you ask for a link to reset a forgotten PIN; the letter goes to the email of the account you signed in with. Google receives that address to send the letter and the IP address when the link is opened; the app deletes the sign-in the link creates right after checking it.</li>
 <li><b>Crash reports</b> (Firebase Crashlytics, Google) — only if you answered "Send" when the app asked, or turned them on later in Settings.</li>
 <li><b>Exchange rates.</b> To convert an amount to another currency, the app requests exchange rates from Frankfurter (api.frankfurter.dev, an open-source service that collects the rates of central banks; it runs on Cloudflare). If Frankfurter does not answer, the app asks the National Bank of the Republic of Belarus (api.nbrb.by, Belarus) and the European Central Bank (ecb.europa.eu, Germany); for a currency none of them publishes, the open currency-api data set (cdn.jsdelivr.net or currency-api.pages.dev). A request contains only currency codes and dates — none of your data. Like any website, these services see your IP address.</li>
-<li><b>Speech recognition.</b> Voice input starts only when you tap the microphone button and only with your permission. The app asks your phone's speech recognition service to work on the phone itself, offline. If your phone cannot do this for your language, the recording is processed on the servers of the phone's recognition service — Google on Android, Apple on iPhone — under their own rules.</li>
 <li><b>App store.</b> Installation, updates and purchases of SpendLess Pro are handled by Google Play or the App Store under their own rules. Payment details stay with the store; we do not see them. If you sign in for shared budgets, the app sends the SpendLess server the store's proof of your purchase and the start date of your free trial; the server asks Google Play or Apple whether the purchase is valid and until when, and keeps only that.</li>
 </ul>
 <h2>Transfer of data to other countries</h2>
